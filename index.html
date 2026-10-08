@@ -3506,138 +3506,140 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
       </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+```html
+<style>
+  * {
+    box-sizing: border-box;
+  }
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background: #081018;
+    color: #fff;
+  }
 
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
-      background: #081018;
-      color: #fff;
+  .card {
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    padding: 30px;
+    background: #101b27;
+    border: 1px solid #26384a;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+  }
+
+  .card h2 {
+    text-align: center;
+    margin: 0 0 25px;
+    font-size: 32px;
+  }
+
+  .card h2 span {
+    color: #00d9c2;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  label {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #34495a;
+    border-radius: 9px;
+    background: #0a141f;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #00d9c2;
+  }
+
+  textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  select option {
+    background: #0a141f;
+    color: #fff;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 9px;
+    background: #00d9c2;
+    color: #061016;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .btn:hover {
+    opacity: .9;
+    transform: translateY(-1px);
+  }
+
+  .btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  #formStatus {
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .success {
+    color: #00d9c2;
+  }
+
+  .error {
+    color: #ff7070;
+  }
+
+  @media (max-width: 650px) {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
 
     .card {
-      width: 100%;
-      max-width: 750px;
-      margin: auto;
-      padding: 30px;
-      background: #101b27;
-      border: 1px solid #26384a;
-      border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.35);
+      padding: 22px;
     }
 
     .card h2 {
-      text-align: center;
-      margin: 0 0 25px;
-      font-size: 32px;
+      font-size: 27px;
     }
+  }
+</style>
 
-    .card h2 span {
-      color: #00d9c2;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 8px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #34495a;
-      border-radius: 9px;
-      background: #0a141f;
-      color: #fff;
-      font-size: 15px;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #00d9c2;
-    }
-
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    select option {
-      background: #0a141f;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 15px;
-      margin-top: 20px;
-      border: 0;
-      border-radius: 9px;
-      background: #00d9c2;
-      color: #061016;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: .3s;
-    }
-
-    .btn:hover {
-      opacity: .9;
-      transform: translateY(-1px);
-    }
-
-    .btn:disabled {
-      opacity: .6;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    #formStatus {
-      text-align: center;
-      margin-top: 15px;
-      min-height: 20px;
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .success {
-      color: #00d9c2;
-    }
-
-    .error {
-      color: #ff7070;
-    }
-
-    @media (max-width: 650px) {
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-
-      .card {
-        padding: 22px;
-      }
-
-      .card h2 {
-        font-size: 27px;
-      }
-    }
-  </style>
 
 <div class="card">
 
@@ -3655,6 +3657,7 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
           required
           placeholder="Your name">
       </div>
+
 
       <div>
         <label for="email">Email</label>
@@ -3677,9 +3680,12 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
       name="service"
       required>
 
-      <option value="" id= " select">
+      <option value="">
         Select package...
       </option>
+
+
+      <!-- MAIN PACKAGES -->
 
       <option value="Basic Package - $49.99 / ₦74,985">
         Basic Package - $49.99 / ₦74,985
@@ -3695,6 +3701,41 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
       <option value="Mastering Only">
         Mastering Only
+      </option>
+
+
+      <!-- ADDITIONAL SERVICES -->
+
+      <option value="Fast Delivery - $19.99">
+        Fast Delivery - $19.99
+      </option>
+
+      <option value="Mastering - $24.99">
+        Mastering - $24.99
+      </option>
+
+      <option value="Manual Tuning - $29.99">
+        Manual Tuning - $29.99
+      </option>
+
+      <option value="Harmonies Creation - $24.50">
+        Harmonies Creation - $24.50
+      </option>
+
+      <option value="Additional Stem - $4.99/stem">
+        Additional Stem - $4.99/stem
+      </option>
+
+      <option value="Mixed Stems - $19.99">
+        Mixed Stems - $19.99
+      </option>
+
+      <option value="Performance Track - $9.99">
+        Performance Track - $9.99
+      </option>
+
+      <option value="Vocal Edits - $11.99">
+        Vocal Edits - $11.99
       </option>
 
     </select>
@@ -3820,6 +3861,8 @@ Sent from the AudioCraft Studios website.`;
   });
 
 </script>
+```
+
 
 
 
