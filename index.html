@@ -341,7 +341,7 @@ input:checked + .slider::before{transform:translateX(24px)}
 .price-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
 .price-card{padding:32px 28px;text-align:center;position:relative}
 .price-card.featured{border-color:rgba(0,229,192,0.4);box-shadow:0 0 0 1px rgba(0,229,192,0.2), 0 20px 60px rgba(0,229,192,0.15);transform:scale(1.03)}
-.price-card.featured::after{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 12px;background:var(--gold);color:#000;font-size:10px;font-weight:800;letter-spacing:1px;border-radius:999px}
+.price-card.featured::after{content:"MOST POPULAR";position:absolute;top:-5px;left:50%;transform:translateX(-50%);padding:4px 12px;background:var(--gold);color:#000;font-size:10px;font-weight:800;letter-spacing:1px;border-radius:999px}
 .price-name{font-size:18px;font-weight:700;margin-bottom:8px}
 .price-amount{font-size:42px;font-weight:900;margin:12px 0;background:linear-gradient(90deg,var(--teal),var(--cyan));-webkit-background-clip:text;color:transparent}
 .price-amount small{font-size:14px;color:var(--muted);font-weight:500}
@@ -768,18 +768,15 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     <p class="hero-tag">"Your Music Deserves More Than Just Good — <em>It Deserves Greatness.</em>"</p>
     <div class="hero-ctas">
      
-<<<<<<< HEAD
-      <a href="#contact" class="btn btn-ghost" style="width: auto;">
-=======
+      
       <a href="#contact" class="btn btn-ghost" style= "width:auto;">
->>>>>>> e0ca9aff35c244b57e94f8ee2913d4c865342637
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V5a2 2 0 0 1 2-2h14a4 4 0 0 1 4 4z"></path></svg>
         Start Project
       </a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
-      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Tracks Delivered</div></div>
+      <div class="stat"><div class="stat-num">1000+</div><div class="stat-label">Tracks Delivered</div></div>
       <div class="stat"><div class="stat-num">5.0</div><div class="stat-label">Client Rating</div></div>
     </div>
   </div>
@@ -2584,41 +2581,61 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
     <div class="price-cards">
       <div class="card price-card">
-        <div class="price-name">Basic Package</div>
-        <div class="price-amount" data-usd="49.99" data-ngn="75000">$49.99</div>
+        <div class="price-name">Mastering Only</div>
+        <div class="price-amount" data-usd="39.99" data-ngn="75000">$39.99</div>
+        <div style="font-family:sanserif; font-size:20px;">
+          (48 hours)
+        </div>
         <ul class="price-features">
-          <li>Up to 5 stems</li>
-          <li>Full mixing &amp; mastering</li>
-          <li>WAV + MP3 delivery</li>
-          <li>3 revisions</li>
+          <li>Dynamic EQ</li>
+          <li>Multiband Compression</li>
+          <li>Saturation</li>
+          <li>Stereo Widening</li>
+          <li>Loudness Optimization</li>
+          <li>2 revisions</li>
         </ul>
         <a href="#contactForm" class="btn btn-ghost" style="width:100%;justify-content:center">
           Choose Basic
         </a>
       </div>
 
-      <div class="card price-card featured">
-        <div class="price-name">Standard Package</div>
-        <div class="price-amount" data-usd="99.99" data-ngn="150000">$99.99</div>
+      <div class="card price-card ">
+        <div class="price-name">Mixing Only</div>
+        <div class="price-amount" data-usd="79.99" data-ngn="150000">$79.99</div>
         <ul class="price-features">
           <li>Up to 10 stems</li>
-          <li>Full mixing &amp; mastering</li>
-          <li>WAV + MP3 delivery</li>
-          <li>5 revisions</li>
+          <li>For more than the listed stems, contact us for custom pricing</li>
+          <li>Level Balancing</li>
+          <li>Automation</li>
+          <li>Pitch Correction (Auto-tune)</li>
+          <li>Compreesion</li>
+          <li>Stereo Widening</li>
+          <li>Effects</li>
+          <li>3 revisions</li>
         </ul>
         <a href="#contactForm" class="btn btn-primary" style="width:100%;justify-content:center">
           Choose Standard
         </a>
       </div>
 
-      <div class="card price-card">
-        <div class="price-name">Premium Package</div>
-        <div class="price-amount" data-usd="149.99" data-ngn="225000">$149.99</div>
+      <div class="card price-card featured">
+        <div class="price-name">Mixing & Mastering</div>
+        <div class="price-amount" data-usd="109.99" data-ngn="225000">$109.99</div>
         <ul class="price-features">
-          <li>Up to 15 stems</li>
-          <li>Full mixing &amp; mastering</li>
-          <li>WAV + MP3 delivery</li>
-          <li>7 revisions</li>
+          <li>Up to 10 stems</li>
+          <li>For more than the listed stems, contact us for custom pricing</li>
+          <li>Level Balancing</li>
+          <li>Automation</li>
+          <li>Pitch Correction (Auto-tune)</li>
+          <li>Compreesion</li>
+          <li>Stereo Widening</li>
+          <li>Effects</li>
+          <li>Dynamic EQ</li>
+          <li>Multiband Compression</li>
+          <li>Saturation</li>
+          <li>Stereo Widening</li>
+          <li>Loudness Optimization</li>
+          <li>3 revisions</li>
         </ul>
         <a href="#contactForm" class="btn btn-ghost" style="width:100%;justify-content:center">
           Choose Premium
@@ -2701,23 +2718,49 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
           <div class="service-title-row">
 
-            <h3>Mastering</h3>
+            <h3>5-track EP</h3>
 
             <span class="service-price">
-              $24.99
+              $399.99
             </span>
 
           </div>
 
           <p>
-            Professional mastering for a polished, balanced and
-            release-ready final track.
+            EPs with more than 5 tracks? Contact us for custom pricing tailored to your project
           </p>
 
         </div>
 
       </div>
 
+        <div class="additional-service-card">
+
+        <div class="service-icon">
+          ◉
+        </div>
+
+        <div class="service-info">
+
+          <div class="service-title-row">
+
+            <h3>10-track Album</h3>
+
+            <span class="service-price">
+              $399.99
+            </span>
+
+          </div>
+
+          <p>
+            Albums with more than 10 tracks? Contact us for custom pricing tailored to your project
+          </p>
+
+        </div>
+
+      </div>
+
+      
 
       <!-- MANUAL TUNING -->
 
@@ -2888,6 +2931,7 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
             </span>
 
           </div>
+          
 
           <p>
             Detailed vocal editing including cleanup, timing and
@@ -3028,6 +3072,7 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 ========================= */
 
 .additional-service-card {
+  text-align: justify
 
   display: flex;
 
