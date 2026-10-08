@@ -3507,6 +3507,7 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+```html
 <style>
   * {
     box-sizing: border-box;
@@ -3554,8 +3555,8 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     font-weight: bold;
   }
 
-  input,
-  select,
+  input[type="text"],
+  input[type="email"],
   textarea {
     width: 100%;
     padding: 14px;
@@ -3568,7 +3569,6 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
   }
 
   input:focus,
-  select:focus,
   textarea:focus {
     border-color: #00d9c2;
   }
@@ -3578,9 +3578,84 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     resize: vertical;
   }
 
-  select option {
+  /* PACKAGE SELECTION */
+
+  .package-box {
+    margin-top: 8px;
+    padding: 18px;
     background: #0a141f;
+    border: 1px solid #34495a;
+    border-radius: 12px;
+  }
+
+  .package-help {
+    margin: 0 0 15px;
+    color: #91a3b8;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .package-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .package-option {
+    position: relative;
+  }
+
+  .package-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .package-option label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0;
+    padding: 14px;
+    min-height: 58px;
+    background: #101b27;
+    border: 1px solid #26384a;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .25s ease;
+  }
+
+  .package-option label:hover {
+    border-color: #00d9c2;
+    transform: translateY(-1px);
+  }
+
+  .package-option input[type="checkbox"]:checked + label {
+    background: #0d2930;
+    border-color: #00d9c2;
+    box-shadow: 0 0 0 1px #00d9c2;
+  }
+
+  .package-name {
     color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .package-price {
+    color: #00d9c2;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .selected-count {
+    margin-top: 12px;
+    color: #00d9c2;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
   }
 
   .btn {
@@ -3602,12 +3677,6 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     transform: translateY(-1px);
   }
 
-  .btn:disabled {
-    opacity: .6;
-    cursor: not-allowed;
-    transform: none;
-  }
-
   #formStatus {
     text-align: center;
     margin-top: 15px;
@@ -3616,18 +3685,19 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     font-weight: bold;
   }
 
-  .success {
-    color: #00d9c2;
-  }
-
   .error {
     color: #ff7070;
   }
 
   @media (max-width: 650px) {
+
     .form-row {
       grid-template-columns: 1fr;
       gap: 0;
+    }
+
+    .package-list {
+      grid-template-columns: 1fr;
     }
 
     .card {
@@ -3673,75 +3743,291 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     </div>
 
 
-    <label for="service">Project Type</label>
+    <!-- MULTIPLE PACKAGE SELECTION -->
 
-    <select
-      id="service"
-      name="service"
-      required>
+    <label>
+      Select Package / Services
+    </label>
 
-      <option value="">
-        Select package...
-      </option>
+    <div class="package-box">
 
-
-      <!-- MAIN PACKAGES -->
-
-      <option value="Basic Package - $49.99 / ₦74,985">
-        Basic Package - $49.99 / ₦74,985
-      </option>
-
-      <option value="Standard Package - $99.99 / ₦149,985">
-        Standard Package - $99.99 / ₦149,985
-      </option>
-
-      <option value="Premium Package - $149.99 / ₦224,985">
-        Premium Package - $149.99 / ₦224,985
-      </option>
-
-      <option value="Mastering Only">
-        Mastering Only
-      </option>
+      <p class="package-help">
+        Select one or more packages/services. You can choose multiple
+        options if you need them.
+      </p>
 
 
-      <!-- ADDITIONAL SERVICES -->
-
-      <option value="Fast Delivery - $19.99">
-        Fast Delivery - $19.99
-      </option>
-
-      <option value="Mastering - $24.99">
-        Mastering - $24.99
-      </option>
-
-      <option value="Manual Tuning - $29.99">
-        Manual Tuning - $29.99
-      </option>
-
-      <option value="Harmonies Creation - $24.50">
-        Harmonies Creation - $24.50
-      </option>
-
-      <option value="Additional Stem - $4.99/stem">
-        Additional Stem - $4.99/stem
-      </option>
-
-      <option value="Mixed Stems - $19.99">
-        Mixed Stems - $19.99
-      </option>
-
-      <option value="Performance Track - $9.99">
-        Performance Track - $9.99
-      </option>
-
-      <option value="Vocal Edits - $11.99">
-        Vocal Edits - $11.99
-      </option>
-
-    </select>
+      <div class="package-list">
 
 
-    <label for="message">Message</label>
+        <!-- MAIN PACKAGES -->
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="basic"
+            name="packages"
+            value="Basic Package - $49.99 / ₦74,985">
+
+          <label for="basic">
+            <span class="package-name">
+              Basic Package
+            </span>
+
+            <span class="package-price">
+              $49.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="standard"
+            name="packages"
+            value="Standard Package - $99.99 / ₦149,985">
+
+          <label for="standard">
+            <span class="package-name">
+              Standard Package
+            </span>
+
+            <span class="package-price">
+              $99.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="premium"
+            name="packages"
+            value="Premium Package - $149.99 / ₦224,985">
+
+          <label for="premium">
+            <span class="package-name">
+              Premium Package
+            </span>
+
+            <span class="package-price">
+              $149.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="masteringOnly"
+            name="packages"
+            value="Mastering Only">
+
+          <label for="masteringOnly">
+            <span class="package-name">
+              Mastering Only
+            </span>
+          </label>
+
+        </div>
+
+
+        <!-- ADDITIONAL SERVICES -->
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="fastDelivery"
+            name="packages"
+            value="Fast Delivery - $19.99">
+
+          <label for="fastDelivery">
+            <span class="package-name">
+              Fast Delivery
+            </span>
+
+            <span class="package-price">
+              $19.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="mastering"
+            name="packages"
+            value="Mastering - $24.99">
+
+          <label for="mastering">
+            <span class="package-name">
+              Mastering
+            </span>
+
+            <span class="package-price">
+              $24.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="manualTuning"
+            name="packages"
+            value="Manual Tuning - $29.99">
+
+          <label for="manualTuning">
+            <span class="package-name">
+              Manual Tuning
+            </span>
+
+            <span class="package-price">
+              $29.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="harmonies"
+            name="packages"
+            value="Harmonies Creation - $24.50">
+
+          <label for="harmonies">
+            <span class="package-name">
+              Harmonies Creation
+            </span>
+
+            <span class="package-price">
+              $24.50
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="additionalStem"
+            name="packages"
+            value="Additional Stem - $4.99/stem">
+
+          <label for="additionalStem">
+            <span class="package-name">
+              Additional Stem
+            </span>
+
+            <span class="package-price">
+              $4.99/stem
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="mixedStems"
+            name="packages"
+            value="Mixed Stems - $19.99">
+
+          <label for="mixedStems">
+            <span class="package-name">
+              Mixed Stems
+            </span>
+
+            <span class="package-price">
+              $19.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="performanceTrack"
+            name="packages"
+            value="Performance Track - $9.99">
+
+          <label for="performanceTrack">
+            <span class="package-name">
+              Performance Track
+            </span>
+
+            <span class="package-price">
+              $9.99
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="package-option">
+
+          <input
+            type="checkbox"
+            id="vocalEdits"
+            name="packages"
+            value="Vocal Edits - $11.99">
+
+          <label for="vocalEdits">
+            <span class="package-name">
+              Vocal Edits
+            </span>
+
+            <span class="package-price">
+              $11.99
+            </span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="selected-count"
+        id="selectedCount">
+
+        0 services selected
+
+      </div>
+
+    </div>
+
+
+    <label for="message">
+      Message
+    </label>
 
     <textarea
       id="message"
@@ -3754,8 +4040,7 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
     <button
       type="submit"
       id="submitBtn"
-      class="btn btn-primary"
-      style="width:100%;justify-content:center">
+      class="btn">
 
       Send Project Request
 
@@ -3764,7 +4049,6 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
     <p
       id="formStatus"
-      style="font-size:13px;text-align:center;margin-top:12px;font-weight:bold;"
       role="status"
       aria-live="polite">
     </p>
@@ -3776,29 +4060,104 @@ footer{padding:60px 0 100px;border-top:1px solid var(--border);text-align:center
 
 <script>
 
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function(event) {
+const contactForm =
+  document.getElementById("contactForm");
+
+
+const packageCheckboxes =
+  document.querySelectorAll(
+    'input[name="packages"]'
+  );
+
+
+const selectedCount =
+  document.getElementById("selectedCount");
+
+
+/* UPDATE SELECTED NUMBER */
+
+packageCheckboxes.forEach(function(checkbox) {
+
+  checkbox.addEventListener("change", function() {
+
+    const selected =
+      document.querySelectorAll(
+        'input[name="packages"]:checked'
+      );
+
+    selectedCount.textContent =
+      selected.length +
+      (selected.length === 1
+        ? " service selected"
+        : " services selected");
+
+  });
+
+});
+
+
+/* FORM SUBMISSION */
+
+contactForm.addEventListener(
+  "submit",
+  function(event) {
 
     event.preventDefault();
 
 
-    /* GET THE FORM INFORMATION */
+    /* CLIENT INFORMATION */
 
     const name =
-      document.getElementById("name").value.trim();
+      document.getElementById("name")
+      .value
+      .trim();
+
 
     const email =
-      document.getElementById("email").value.trim();
+      document.getElementById("email")
+      .value
+      .trim();
 
-    const service =
-      document.getElementById("service").value;
 
     const message =
-      document.getElementById("message").value.trim();
+      document.getElementById("message")
+      .value
+      .trim();
 
 
-    /* YOUR EMAIL ADDRESS */
+    /* GET ALL SELECTED PACKAGES */
+
+    const selectedPackages =
+      Array.from(
+        document.querySelectorAll(
+          'input[name="packages"]:checked'
+        )
+      ).map(function(item) {
+
+        return item.value;
+
+      });
+
+
+    /* MAKE SURE AT LEAST ONE IS SELECTED */
+
+    if (selectedPackages.length === 0) {
+
+      document.getElementById(
+        "formStatus"
+      ).textContent =
+        "Please select at least one package or service.";
+
+      document.getElementById(
+        "formStatus"
+      ).className = "error";
+
+      return;
+
+    }
+
+
+    /* YOUR EMAIL */
 
     const ownerEmail =
       "omatagirenprecious@gmail.com";
@@ -3807,7 +4166,19 @@ document
     /* EMAIL SUBJECT */
 
     const subject =
-      "New AudioCraft Project Request - " + service;
+      "New AudioCraft Project Request";
+
+
+    /* NUMBER THE SELECTED SERVICES */
+
+    const packageList =
+      selectedPackages
+        .map(function(item, index) {
+
+          return (index + 1) + ". " + item;
+
+        })
+        .join("\n");
 
 
     /* EMAIL CONTENT */
@@ -3824,7 +4195,11 @@ Name: ${name}
 
 Client Email: ${email}
 
-Project Type: ${service}
+
+SELECTED PACKAGES / SERVICES
+================================
+
+${packageList}
 
 
 MESSAGE
@@ -3837,7 +4212,7 @@ ${message}
 Sent from the AudioCraft Studios website.`;
 
 
-    /* CREATE EMAIL LINK */
+    /* CREATE MAILTO LINK */
 
     const mailtoLink =
       "mailto:" +
@@ -3848,22 +4223,27 @@ Sent from the AudioCraft Studios website.`;
       encodeURIComponent(body);
 
 
-    /* DISPLAY STATUS */
+    /* STATUS */
 
-    document.getElementById("formStatus").textContent =
+    document.getElementById(
+      "formStatus"
+    ).textContent =
       "Opening your email application...";
 
 
-    /* OPEN THE USER'S EMAIL */
+    document.getElementById(
+      "formStatus"
+    ).className = "success";
 
-    window.location.href = mailtoLink;
+
+    /* OPEN EMAIL */
+
+    window.location.href =
+      mailtoLink;
 
   });
 
 </script>
-
-
-
 
 
   
